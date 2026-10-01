@@ -1,0 +1,145 @@
+/*==========================  index ==============================*/
+body {
+  margin: 0;
+  padding: 40px 20px;
+  
+  background-image: url('fundo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  
+  color: #ffffff; 
+  font-family: 'Courier New', Courier, monospace, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.caixa {
+  background-color: #000000;      
+  border: 2px dashed #ffffff;    
+  padding: 24px;
+  max-width: 650px;
+  margin: 0 auto 20px auto;
+  box-shadow: 4px 4px 4px #000000;
+}
+
+h2 { /* titulos*/
+  color: #220131;
+  background-color: #ffffffc7;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #ffffff;
+  padding: 8px 15px; /* 8px em cima/embaixo e 15px nas laterais */
+}
+
+a {
+  color: #92f8ec;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #178c92;
+}
+
+
+/* tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+thead th { /*parte titulo, descricao etc*/
+  text-align: left;
+  font-size: 13px;
+  color: #ffffff;
+  padding: 8px;
+  border-bottom: solid 1px #ffffff;
+  border-top: solid 1px #ffffff;
+  background-color: #111111;
+}
+
+tbody td { /*textinhos*/
+  padding: 10px 8px;
+  border-bottom: 1px dotted #444444;
+  color: #ffffff;
+}
+
+/*status*/
+.status-concluida {
+  color: #00ff7f !important; 
+  font-weight: bold;
+}
+.status-naoconcluida {
+  color: #a0a0a0 !important; 
+}
+
+/*botao remover*/
+a.link-remover {
+  color: #ff4d4d !important; 
+  text-decoration: underline;
+}
+a.link-remover:hover {
+  color: #ff0000 !important; 
+}
+
+/*===================  /nova-tarefa  =======================*/
+/*formulario*/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  display: block;
+  margin-bottom: -8px;
+}
+
+/*parte pra digita*/
+input[type="text"],input[type="date"] {
+  background-color: #000000;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 8px 10px;
+  font-family: inherit;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,input[type="date"]:focus { /*focus: quando clica*/
+  outline: none;
+  border: 1px dashed #ffffff;
+  background-color: #111111;
+}
+
+input[type="submit"] {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+input[type="submit"]:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.erro {
+  color: #fd5959;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: -5px;
+}

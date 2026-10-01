@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tarefas</title>
+     <link rel="stylesheet" th:href="@{/style.css}" href="style.css"> <!-- linkar com css-->
+</head>
+<body>
+
+<div class="caixa"></div>
+
+<div th:switch="${tarefas}">
+    <h2 th:case="null">Ainda não há tarefas!</h2>
+
+    <div th:case="*">
+        <h2>Tarefas</h2>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Status</th>
+                <th>Prazo</th>
+                <th>Concluir</th>
+                <th>Remover</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+            <tr th:each="tarefa : ${tarefas}">
+                <td th:text="${tarefa.titulo}"></td>
+                <td th:text="${tarefa.descricao}"></td>
+
+                <!--fazer classe conforme status pra linkar as cores:-->
+                <td th:text="${tarefa.concluida} ? 'Concluída' : 'Não concluída'" 
+                    th:class="${tarefa.concluida} ? 'status-concluida' : 'status-naoconcluida'">
+                </td>
+
+                <td th:text="${#dates.format(tarefa.prazo, 'dd/MM/yyyy')}"></td>
+                
+                <!--botao pra link concluir/desmarcar-->
+                <td>
+                    <a  th:href="@{/concluir/{id}(id=${tarefa.id})}" 
+                        th:text="${tarefa.concluida} ? 'Desmarcar' : 'Concluir'">
+                    </a>
+                </td>
+
+                <!--botao link remover-->
+                 <td>
+                     <a class="link-remover" th:href="@{/remover/{id}(id=${tarefa.id})}">Remover</a>
+                 </td>
+
+                 </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p><a href="/nova-tarefa">Adicionar nova tarefa</a></p> 
+</div>
+
+</body>
+</html>

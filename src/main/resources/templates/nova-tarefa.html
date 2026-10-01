@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Nova Tarefa</title>
+     <link rel="stylesheet" th:href="@{/style.css}" href="style.css"> <!-- linkar com css-->
+</head>
+<body>
+
+<h2> Nova Tarefa</h2>
+
+<form action="#" th:action="@{/adicionar-tarefa}" th:object="${tarefa}" method="post">
+
+    <label for="titulo">Título:</label>
+    <input type="text" th:field="*{titulo}" id="titulo">
+    <span class="erro" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></span> <!--class: erro -> cria um 
+                                                                            subgrupo pra dps poder linkar no css-->
+    <br/>
+
+    <label for="descricao">Descrição:</label>
+    <input type="text" th:field="*{descricao}" id="descricao">
+    <span class="erro" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></span>
+    <br/>
+
+    <label for="prazo">Prazo:  </label>
+    <input type="date" th:field="*{prazo}" id="prazo">
+    <span class="erro" th:if="${#fields.hasErrors('prazo')}" th:errors="*{prazo}"></span>
+    <br/>
+
+    <input type="submit" value="Adicionar">
+
+</form>
+
+<p><a href="/index">Ver lista de tarefas</a></p>
+
+</body>
+</html>
